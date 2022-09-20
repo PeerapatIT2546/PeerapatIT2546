@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
+    "handy-storage": "^2.1.6",
     "sqlite3": "^5.0.10"
   },
   "engines": {

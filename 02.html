@@ -38,13 +38,7 @@
       position: relative;
     }
   </style>
-  <script>
-    let name = []
-    let num = []
-    let up = []
-    let down = []
-    let hit = []
-  </script>
+  
 
   <title>02.html</title>
 </head>
@@ -64,7 +58,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto mx-auto order-0">
         <li class="nav-item active">
           <a class="nav-link" href="01.html">หน้าหลัก</a>
         </li>
@@ -78,69 +72,134 @@
     </div>
   </nav>
 
-  <div class="container p-3">
+  <div class="container p-3 ">
     <div class="d-flex justify-content-center">
-      <div class="card" style="width: 30rem; height: 35rem">
-        <div class="card-body">
+      <div class="card" style="width: 60rem; height: 35rem ">
+        <div class="card-body bg-secondary text-white">
           <h5 class="card-title" align="center" style="font-family:'Righteous'">สั่งซื้อ </h5>
           <p class="card-text">
             <form >
           <div class="form-group" >
-            <label for="formGroupExampleInput" >ชื่อลูกค้า</label>
-            <input type="text" class="form-control" id="name" placeholder="">
+            <div class="row">
+              <div class="col">
+                <label for="formGroupExampleInput" >ชื่อลูกค้า</label>
+                <input type="text" class="form-control" id="name" placeholder="">
+              </div>
+              <div class="col">
+              </div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="formGroupExampleInput2">ตัวเลข</label>
-            <input type="text" class="form-control" id="num" placeholder="">
+            <div class="row">
+              <div class="col">
+                <label for="formGroupExampleInput" >เลข 2 ตัวบน</label>
+                <input type="text" class="form-control" id="numup2" placeholder="">
+              </div>
+              <div class="col">
+                <label for="formGroupExampleInput2">ราคา</label>
+            <input type="text" class="form-control" id="Pnumup2" placeholder="">
+              </div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="formGroupExampleInput3">บน</label>
-            <input type="text" class="form-control" id="up" placeholder="">
+            <div class="row">
+              <div class="col">
+                <label for="formGroupExampleInput" >เลข 3 ตัวบน</label>
+                <input type="text" class="form-control" id="numup3" placeholder="">
+              </div>
+              <div class="col">
+                <label for="formGroupExampleInput2">ราคา</label>
+            <input type="text" class="form-control" id="Pnumup3" placeholder="">
+              </div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="formGroupExampleInput4">ล่าง</label>
-            <input type="text" class="form-control" id="down" placeholder="">
+            <div class="row">
+              <div class="col">
+                <label for="formGroupExampleInput" >เลข 2 ตัวล่าง</label>
+                <input type="text" class="form-control" id="numdown2" placeholder="">
+              </div>
+              <div class="col">
+                <label for="formGroupExampleInput2">ราคา</label>
+            <input type="text" class="form-control" id="Pnumdown2" placeholder="">
+              </div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="formGroupExampleInput5">โต๊ด</label>
-            <input type="text" class="form-control" id="hit" placeholder="">
+            <div class="row">
+              <div class="col">
+                <label for="formGroupExampleInput" >เลข 3 ตัวล่าง</label>
+                <input type="text" class="form-control" id="numdown3" placeholder="">
+              </div>
+              <div class="col">
+                <label for="formGroupExampleInput2">ราคา</label>
+            <input type="text" class="form-control" id="Pnumdown3" placeholder="">
+              </div>
+            </div>
           </div>
           </form>
           </p>
+          <div align="right">
           <button type="button" class="btn btn-success w-25" onclick="set_array()">บันทึก</button>
           <a href="03.html" class="btn btn-success" >สั่งซื้อ</a>
+            </div>
         </div>
       </div>
     </div>
   </div>
 
-
+  <script>
+    let name = []
+    let numdown2 = []
+    let Pnumdown3 = []
+    let Pnumdown2 = []
+    let numdown3 = []
+    let numup2 = []
+    let numup3 = []
+    let Pnumup3 = []
+    let Pnumup2 = []
+  </script>
   <script >
 
     function set_array() {
         name.push(document.getElementById('name').value)
-        num.push(document.getElementById('num').value)
-        up.push(document.getElementById('up').value)
-        down.push(document.getElementById('down').value)
-        hit.push(document.getElementById('hit').value)
+        numdown2.push(document.getElementById('numdown2').value)
+        Pnumdown3.push(document.getElementById('Pnumdown3').value)
+        Pnumdown2.push(document.getElementById('Pnumdown2').value)
+        numdown3.push(document.getElementById('numdown3').value)
+        numup2.push(document.getElementById('numup2').value)
+        numup3.push(document.getElementById('numup3').value)
+        Pnumup3.push(document.getElementById('Pnumup3').value)
+        Pnumup2.push(document.getElementById('Pnumup2').value)
 
 
         localStorage.setItem('name', JSON.stringify(name))
-        localStorage.setItem('num', JSON.stringify(num))
-        localStorage.setItem('up', JSON.stringify(up))
-        localStorage.setItem('down', JSON.stringify(down))
-        localStorage.setItem('hit', JSON.stringify(hit))
-      clear_input()
+        localStorage.setItem('numdown2', JSON.stringify(numdown2))
+        localStorage.setItem('Pnumdown2', JSON.stringify(Pnumdown2))
+        localStorage.setItem('numdown3', JSON.stringify(numdown3))
+        localStorage.setItem('Pnumdown3', JSON.stringify(Pnumdown3))
+        localStorage.setItem('numup2', JSON.stringify(numup2))
+        localStorage.setItem('numup3', JSON.stringify(numup3))
+        localStorage.setItem('Pnumup3', JSON.stringify(Pnumup3))
+        localStorage.setItem('Pnumup2', JSON.stringify(Pnumup2))
+
+
     }
 
     function clear_input() {
         document.getElementById('name').value = ''
-        document.getElementById('num').value = ''
-        document.getElementById('up').value = ''
-        document.getElementById('down').value = ''
-        document.getElementById('hit').value = ''
+        document.getElementById('numdown2').value = ''
+        document.getElementById('Pnumdown2').value = ''
+        document.getElementById('numdown3').value = ''
+        document.getElementById('Pnumdown3').value = ''
+        document.getElementById('numup2').value = ''
+        document.getElementById('numup3').value = ''
+        document.getElementById('Pnumup3').value = ''
+        document.getElementById('Pnumup2').value = ''
+
     }
   </script>
+  <script ></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
